@@ -1,0 +1,43 @@
+﻿<Window x:Class="Pendulum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pendulum"
+        mc:Ignorable="d"
+        Title="PendulumViewer" Height="450" Width="800"
+        Name="pendulumWindow"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"
+        Topmost="True"
+        >
+    <Grid>
+        <local:OpaqueUnclickableImage x:Name="PendulumImage" Source="/Pendulum.png" Width="200" Height="400" MouseLeftButtonDown="PendulumImage_MouseLeftButtonDown" MouseMove="PendulumImage_MouseMove" MouseLeftButtonUp="PendulumImage_MouseLeftButtonUp" >
+            <Image.RenderTransform>
+                <RotateTransform x:Name="PendulumImageRotate" CenterX="100" CenterY="200" Angle="45" />
+            </Image.RenderTransform>
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="設定" Click="SettingMenu_Click"/>
+                    <MenuItem Header="終了" Click="FinishMenu_Click"/>
+                </ContextMenu>
+            </Image.ContextMenu>
+        </local:OpaqueUnclickableImage>
+        <Label x:Name="prevTopLabel" Content="prevTop: " HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="prevLeftLabel" Content="prevLeft: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,26,0,0" Visibility="Hidden"/>
+        <Label x:Name="currentTopLabel" Content="currentTop: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,52,0,0" Visibility="Hidden"/>
+        <Label x:Name="currentLeftLabel" Content="currentLeft: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,78,0,0" Visibility="Hidden"/>
+        <Label x:Name="diffTopLabel" Content="diffTop: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,104,0,0" Visibility="Hidden"/>
+        <Label x:Name="diffLeftLabel" Content="diffLeft: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,130,0,0" Visibility="Hidden"/>
+        <Label x:Name="diffSizeLabel" Content="diffSize: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,156,0,0" Visibility="Hidden"/>
+        <Label x:Name="diffAngleLabel" Content="diffAngle: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1,182,0,0" Visibility="Hidden"/>
+        <Label x:Name="kLabel" Content="k: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1,213,0,0" Visibility="Hidden"/>
+        <Label x:Name="uLabel" Content="u: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1,239,0,0" Visibility="Hidden"/>
+        <Label x:Name="energyLabel" Content="energy: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1,265,0,0" Visibility="Hidden"/>
+        <Label x:Name="defaultEnergyLabel" Content="defaultEnergy: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1,291,0,0" Visibility="Hidden"/>
+        <Label x:Name="angleLabel" Content="angle: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1,317,0,0" Visibility="Hidden"/>
+        <Label x:Name="mousePointLabel" Content="mousePoint: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,343,0,0" Visibility="Hidden"/>
+
+    </Grid>
+</Window>
